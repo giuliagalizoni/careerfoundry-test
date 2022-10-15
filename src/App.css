@@ -1,3 +1,55 @@
-.App {
-  text-align: center;
+.container {
+  margin: 24px;
+}
+
+.bg {
+  background-color: #223d50;
+}
+
+h1 {
+  padding: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #fff;
+}
+
+h1 span {
+  font-weight: 500;
+}
+
+.buttons-box {
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+h3 {
+  padding: 12px;
+  margin: 0 12px 0 0;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.buttons-box ul {
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+}
+
+.buttons-box button {
+  padding: 12px;
+  margin-right: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+
+  border: none;
+  background-color: #1c7488;
 }

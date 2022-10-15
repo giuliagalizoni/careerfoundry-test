@@ -26,23 +26,31 @@ function App() {
   console.log(course);
 
   return (
-    <div className='App'>
-      <header>
-        <h1>Careerfoundry</h1>
-        <h3>Our courses: </h3>
-        <div>
-          {courses.map((course) => (
-            <button key={course.slug} onClick={() => setCourse(course)}>
-              {course.title}
-            </button>
-          ))}
+    <div className='container'>
+      <header className='bg'>
+        <h1>
+          Career<span>foundry</span>
+        </h1>
+        <div className='buttons-box'>
+          <h3>Our courses </h3>
+          <ul>
+            {courses.map((course) => (
+              <li key={course.slug}>
+                <button onClick={() => setCourse(course)}>
+                  {course.title}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </header>
       <main>
         {Object.keys(course).length ? (
           <CourseDetails {...course} />
         ) : (
-          <p>choose a course</p>
+          <p>
+            Choose a course in the menu above to learn more about our programs
+          </p>
         )}
       </main>
     </div>
