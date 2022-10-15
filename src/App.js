@@ -25,30 +25,33 @@ function App() {
 
   return (
     <div className='container'>
-      <header className='bg'>
+      <header className='bg-top'>
         <h1>
           Career<span>foundry</span>
         </h1>
         <div className='buttons-box'>
           <h3>Our courses </h3>
           <ul>
-            {courses.map((course) => (
-              <li key={course.slug}>
-                <button onClick={() => setCourse(course)}>
-                  {course.title}
+            {courses.map((courseEl) => (
+              <li key={courseEl.slug}>
+                <button
+                  className={course === courseEl ? 'active' : 'inactive'}
+                  onClick={() => setCourse(courseEl)}
+                >
+                  {courseEl.title}
                 </button>
               </li>
             ))}
           </ul>
         </div>
       </header>
-      <main>
+      <main className='bg-main'>
         {Object.keys(course).length ? (
           <CourseDetails {...course} />
         ) : (
-          <p>
+          <div className='placeholder'>
             Choose a course in the menu above to learn more about our programs
-          </p>
+          </div>
         )}
       </main>
     </div>

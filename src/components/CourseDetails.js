@@ -4,7 +4,11 @@ import axios from 'axios';
 
 function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
   const [details, setDetails] = useState({});
-  const [location, setLocation] = useState({});
+  const [location, setLocation] = useState({
+    location: {
+      is_eu: true,
+    },
+  });
 
   useEffect(() => {
     async function fetchData() {
@@ -34,22 +38,37 @@ function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
     // fetchLocation();
   }, [slug]);
 
-  console.log(location.location.is_eu);
-
   const { description, prices, start_dates } = details;
 
   return (
     Object.keys(details).length && (
-      <div>
+      <div className='details-box'>
         <h2>{title}</h2>
         <p>{description}</p>
-        <p>{next_start_formatted}</p>
+        <div className='highlights'>
+          <div>
+            <div className='price'>
+              <span>Price</span>
+              {location.location.is_eu ? (
+                <p>{prices[1].amount}€</p>
+              ) : (
+                <p>${prices[0].amount}</p>
+              )}
+            </div>
+          </div>
 
-        {location.location.is_eu ? (
-          <p>{prices[1].amount}€</p>
-        ) : (
-          <p>${prices[0].amount}</p>
-        )}
+          <div className='start-date'>
+            <h4>Next start date: </h4>
+            <p>{next_start_formatted}</p>
+          </div>
+
+          <div className='other-dates'>
+            <p>Other dates</p>
+            {start_dates.map((date) => (
+              <p>{date}</p>
+            ))}
+          </div>
+        </div>
       </div>
     )
   );

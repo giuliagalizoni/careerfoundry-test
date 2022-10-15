@@ -1,0 +1,61 @@
+.details-box {
+  padding: 32px;
+}
+
+.details-box h2 {
+  margin: 0;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #223c50;
+}
+
+.highlights {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  width: 250px;
+  background-color: #ff6c6c;
+  padding: 24px;
+  color: #fff;
+}
+
+.price p {
+  font-size: 4rem;
+  margin: 0;
+  color: #fff;
+}
+
+.price span {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.start-date {
+  padding: 24px;
+
+  background-color: #21667c;
+
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.start-date h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.other-dates {
+  padding: 24px;
+  color: #223c50;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.other-dates p {
+  margin: 0;
+  padding: 4px;
+}

@@ -1,15 +1,16 @@
 .container {
-  margin: 24px;
+  margin: 0 auto;
 }
 
-.bg {
+.bg-top {
   background-color: #223d50;
 }
 
 h1 {
   padding: 16px;
+  margin: 0;
   font-family: 'Oswald', sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 300;
   font-style: italic;
   color: #fff;
@@ -51,5 +52,23 @@ h3 {
   color: #fff;
 
   border: none;
+}
+
+.buttons-box button:hover {
+  background-color: #21667c;
+}
+.inactive {
   background-color: #1c7488;
+}
+.active {
+  background-color: #21667c;
+}
+
+.bg-main {
+  background-color: #f3f3f3;
+}
+
+.placeholder {
+  margin: 0;
+  padding: 32px;
 }
