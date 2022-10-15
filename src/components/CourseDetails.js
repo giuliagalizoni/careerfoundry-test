@@ -1,8 +1,9 @@
 import './CourseDetails.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { format } from 'date-fns';
 
-function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
+function CourseDetails({ slug, title, next_start_formatted }) {
   const [details, setDetails] = useState({});
   const [location, setLocation] = useState({
     location: {
@@ -63,9 +64,9 @@ function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
           </div>
 
           <div className='other-dates'>
-            <p>Other dates</p>
+            <h5>Other dates</h5>
             {start_dates.map((date) => (
-              <p>{date}</p>
+              <p>{format(new Date(date), 'PPPP')}</p>
             ))}
           </div>
         </div>

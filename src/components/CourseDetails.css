@@ -16,8 +16,13 @@
   justify-content: space-between;
 }
 
+.description {
+  color: #223c50;
+  font-style: italic;
+}
+
 .price {
-  width: 250px;
+  height: 150px;
   background-color: #ff6c6c;
   padding: 24px;
   color: #fff;
@@ -51,8 +56,12 @@
 .other-dates {
   padding: 24px;
   color: #223c50;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-style: italic;
+}
+.other-dates h5 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .other-dates p {
