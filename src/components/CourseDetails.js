@@ -18,8 +18,23 @@ function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
       }
     }
 
+    async function fetchLocation() {
+      try {
+        const response = await axios.get(
+          `http://api.ipstack.com/check?access_key=${process.env.REACT_APP_IPSTACK_KEY}&fields=location&output=json`,
+          {}
+        );
+        setLocation(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
     fetchData();
+    // fetchLocation();
   }, [slug]);
+
+  console.log(location.location.is_eu);
 
   const { description, prices, start_dates } = details;
 
@@ -30,7 +45,7 @@ function CourseDetails({ slug, title, url, next_start, next_start_formatted }) {
         <p>{description}</p>
         <p>{next_start_formatted}</p>
 
-        {location.is_eu ? (
+        {location.location.is_eu ? (
           <p>{prices[1].amount}€</p>
         ) : (
           <p>${prices[0].amount}</p>

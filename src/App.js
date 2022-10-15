@@ -23,8 +23,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(course);
-
   return (
     <div className='container'>
       <header className='bg'>
