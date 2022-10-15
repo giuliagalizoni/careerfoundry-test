@@ -36,16 +36,16 @@ function CourseDetails({ slug, title, next_start_formatted }) {
     }
 
     fetchData();
-    // fetchLocation();
+    fetchLocation();
   }, [slug]);
 
   const { description, prices, start_dates } = details;
 
   return (
-    Object.keys(details).length && (
+    Object.keys(details).length > 0 && (
       <div className='details-box'>
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p className='description'>{description}</p>
         <div className='highlights'>
           <div>
             <div className='price'>
@@ -65,9 +65,10 @@ function CourseDetails({ slug, title, next_start_formatted }) {
 
           <div className='other-dates'>
             <h5>Other dates</h5>
-            {start_dates.map((date) => (
-              <p>{format(new Date(date), 'PPPP')}</p>
-            ))}
+            {start_dates.map(
+              (date, i) =>
+                i > 0 && <p key={date}>{format(new Date(date), 'PPPP')}</p>
+            )}
           </div>
         </div>
       </div>

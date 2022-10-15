@@ -71,4 +71,7 @@ h3 {
 .placeholder {
   margin: 0;
   padding: 32px;
+  color: #223c50;
+  font-size: 1rem;
+  font-style: italic;
 }
