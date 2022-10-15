@@ -39,10 +39,10 @@ function App() {
         </div>
       </header>
       <main>
-        {course && (
-          <div>
-            <CourseDetails {...course} />
-          </div>
+        {Object.keys(course).length ? (
+          <CourseDetails {...course} />
+        ) : (
+          <p>choose a course</p>
         )}
       </main>
     </div>
