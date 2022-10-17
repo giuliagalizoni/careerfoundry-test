@@ -12,6 +12,8 @@ function CourseDetails({ slug, title, next_start_formatted }) {
   });
 
   useEffect(() => {
+    setDetails({});
+
     async function fetchData() {
       try {
         const response = await axios.get(

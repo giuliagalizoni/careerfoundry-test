@@ -13,7 +13,6 @@
 
 .highlights {
   display: flex;
-  justify-content: space-between;
 }
 
 .description {
@@ -24,8 +23,8 @@
 
 .price {
   height: 150px;
-  width: 250px;
-  margin-right: 4px;
+  width: 300px;
+  margin-right: 16px;
   background-color: #ff6c6c;
   padding: 24px;
   color: #fff;
